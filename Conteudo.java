@@ -1,23 +1,35 @@
-// Classe abstrata Conteudo
-public abstract class Conteudo {
+public class Serie extends Conteudo {
+   private int temporadas;
+   private int episodiosPorTemporada;
 
-    // Atributos
-    protected String titulo;
-    protected int duracao; // em minutos
-    protected int classificacaoIndicativa;
 
-    // Construtor
-    public Conteudo(String titulo, int duracao, int classificacaoIndicativa) {
-        this.titulo = titulo;
-        this.duracao = duracao;
-        this.classificacaoIndicativa = classificacaoIndicativa;
+   public Serie(String titulo, int duracao, int classificacaoIndicativa, int temporadas, int episodiosPorTemporada) {
+       super(titulo, duracao, classificacaoIndicativa);
+       this.temporadas = temporadas;
+       this.episodiosPorTemporada = episodiosPorTemporada;
+   }
+
+
+   @Override
+   public void exibirDetalhes() {
+       super.exibirDetalhes();
+       System.out.println("Temporadas: " + temporadas);
+       System.out.println("Episódios por temporada: " + episodiosPorTemporada);
+   }
+
+   public int getTemporadas() {
+     return temporadas; 
+    }
+   public void setTemporadas(int temporadas) {
+     this.temporadas = temporadas; 
     }
 
-    // Método abstrato
-    public abstract void exibirDetalhes();
 
-    // Método concreto
-    public void reproduzir() {
-        System.out.println("Reproduzindo: " + titulo);
+   public int getEpisodiosPorTemporada() {
+     return episodiosPorTemporada; 
+    }
+   public void setEpisodiosPorTemporada(int episodiosPorTemporada) { 
+    this.episodiosPorTemporada = episodiosPorTemporada;
+
     }
 }
