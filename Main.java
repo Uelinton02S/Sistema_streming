@@ -1,21 +1,25 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
+        
+      
+        ArrayList<Conteudo> conteudos = new ArrayList<>();
 
-        Filme filme = new Filme("Vingadores", 150, 12, "Ação");
-        Serie serie = new Serie("Stranger Things", 50, 16, 4, 8);
-        Documentario documentario = new Documentario("Planeta Terra", 90, 10, "Natureza");
 
-        filme.exibirDetalhes();
-        filme.reproduzir();
+        conteudos.add(new Filme("Vingadores", 150, 12, "Ação"));
+        conteudos.add(new Serie("Stranger Things", 50, 16, 4, 8));
+        conteudos.add(new Documentario("Planeta Terra", 90, 10, "Natureza"));
 
-        System.out.println();
+        System.out.println("--- EXIBINDO DETALHES DOS CONTEÚDOS ---");
+        
 
-        serie.exibirDetalhes();
-        serie.reproduzir();
-
-        System.out.println();
-
-        documentario.exibirDetalhes();
-        documentario.reproduzir();
+        for (Conteudo conteudo : conteudos) {
+            conteudo.exibirDetalhes();
+            
+            conteudo.reproduzir(); 
+            
+            System.out.println("---------------------------------------");
+        }
     }
 }
