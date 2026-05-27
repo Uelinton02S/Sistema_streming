@@ -1,17 +1,23 @@
 public class Filme extends Conteudo {
+   private String genero;
 
-    private String genero;
 
-    public Filme(String titulo, int duracao, int classificacaoIndicativa, String genero) {
-        super(titulo, duracao, classificacaoIndicativa);
-        this.genero = genero;
+   public Filme(String titulo, int duracao, int classificacaoIndicativa, String genero) {
+       super(titulo, duracao, classificacaoIndicativa);
+       this.genero = genero;
+   }
+
+
+   @Override
+   public void exibirDetalhes() {
+       super.exibirDetalhes(); 
+       System.out.println("Gênero: " + genero);
+   }
+
+   public String getGenero() { 
+    return genero;
     }
-
-    @Override
-    public void exibirDetalhes() {
-        System.out.println("Título: " + titulo);
-        System.out.println("Duração: " + duracao + " minutos");
-        System.out.println("Classificação: " + classificacaoIndicativa + " anos");
-        System.out.println("Gênero: " + genero);
-    }
+   public void setGenero(String genero) {
+     this.genero = genero;
+     }
 }
